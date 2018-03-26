@@ -1,0 +1,45 @@
+{
+  "templateList": [
+    {
+      "name": "haidian",
+      "startTimestamp": 1522028211817,
+      "fieldTemplateList": [
+        {
+          "name": "temp",
+          "dataType": "FLOAT",
+          "lowerBound": "-10.0",
+          "upperBound": "40"
+        },
+        {
+          "name": "wind",
+          "dataType": "INT32",
+          "lowerBound": "0",
+          "upperBound": "1000"
+        }
+      ],
+      "tags": {
+        "db": "zjr",
+        "l1": "china",
+        "l2": "beijing"
+      },
+      "amount": 100000000,
+      "seed": 0,
+      "batchSize": 5000
+    }
+  ],
+  "databaseConfig": {
+    "INFLUXDB": {
+      "url": "http://192.168.3.92:8086",
+      "username": "root",
+      "passwd": "root",
+      "database":"zjr"
+    },
+    "IOTDB" :{
+      "url": "jdbc:tsfile://192.168.3.93:6667/",
+      "username": "root",
+      "passwd": "root",
+      "database":"zjr"
+    }
+
+  }
+}
