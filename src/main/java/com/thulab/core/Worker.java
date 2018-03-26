@@ -8,6 +8,7 @@ import com.thulab.data.template.MeasurementTemplate;
 import com.thulab.write.DBWriter;
 import com.thulab.write.InfluxDBWriter;
 import com.thulab.write.IoTDBWriter;
+import com.thulab.write.MySQLWriter;
 
 import java.sql.SQLException;
 
@@ -53,6 +54,8 @@ public class Worker implements Runnable {
                 return new IoTDBWriter(dbconfig, template);
             case INFLUXDB:
                 return new InfluxDBWriter(dbconfig.getUrl(), dbconfig.getUsername(), dbconfig.getPasswd(), dbconfig.getDatabase());
+            case MYSQL:
+                return new MySQLWriter(dbconfig, template);
             default:
                 return null;
         }
