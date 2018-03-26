@@ -1,0 +1,37 @@
+{
+  "templateList": [
+    {
+      "name": "haidian",
+      "startTimestamp": 1522028211817,
+      "fieldTemplateList": [
+        {
+          "name": "temp",
+          "dataType": "FLOAT",
+          "lowerBound": "-10.0",
+          "upperBound": "40"
+        },
+        {
+          "name": "wind",
+          "dataType": "INT32",
+          "lowerBound": "0",
+          "upperBound": "10"
+        }
+      ],
+      "tags": {
+        "l1": "china",
+        "l2": "beijing"
+      },
+      "amount": 0,
+      "seed": 0,
+      "batchSize": 0
+    }
+  ],
+  "databaseConfig": {
+    "INFLUXDB": {
+      "url": "url",
+      "username": "username",
+      "passwd": "passwd",
+      "type": "INFLUXDB"
+    }
+  }
+}

@@ -27,7 +27,7 @@ public class Main {
     public static void prepareDatabase() {
         InfluxDB influxDB = InfluxDBFactory.connect("http://" + host + ":8086", "root", "root");
         influxDB.createDatabase(dbName);
-        influxDB.createRetentionPolicy(rpName, dbName, "7d", "1d", 1, true);
+//        influxDB.createRetentionPolicy(rpName, dbName, "7d", "1d", 1, true);
         influxDB.close();
     }
 
@@ -52,10 +52,9 @@ public class Main {
     }
 
     public static BatchPoints genBatch(int batchSize) {
-        Random rand = new Random();
         BatchPoints batchPoints = BatchPoints
                 .database(dbName)
-                .retentionPolicy(rpName)
+//                .retentionPolicy(rpName)
                 .build();
         for (int i = 0; i < batchSize; i++) {
             batchPoints.point(genPoint(timestamp ++, value ++));
@@ -64,7 +63,7 @@ public class Main {
     }
 
     public static Point genPoint(long timestamp, int speed) {
-        Point point = Point.measurement("cpu")
+        Point point = Point.measurement("cpu2")
                 .time(timestamp, TimeUnit.MILLISECONDS)
                 .tag("computer", "c1")
                 .addField("speed", speed)
