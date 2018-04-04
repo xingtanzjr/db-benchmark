@@ -1,0 +1,152 @@
+{
+  "templateList": [
+    {
+      "name": "dev_a",
+      "startTimestamp": 1522028101000,
+      "fieldTemplateList": [
+        {
+          "name": "s_ai",
+          "dataType": "INT32",
+          "lowerBound": "0",
+          "upperBound": "100000"
+        },
+        {
+          "name": "s_al",
+          "dataType": "INT64",
+          "lowerBound": "100000",
+          "upperBound": "10000000"
+        },
+        {
+          "name": "s_af",
+          "dataType": "FLOAT",
+          "lowerBound": "-100.0",
+          "upperBound": "100.0"
+        }
+      ],
+      "tags": {
+        "db": "zjr",
+        "data": "fake",
+        "type": "test"
+      },
+      "amount": 100000,
+      "seed": 0,
+      "batchSize": 5000
+    },
+    {
+      "name": "dev_b",
+      "startTimestamp": 1522028101000,
+      "fieldTemplateList": [
+        {
+          "name": "s_bi",
+          "dataType": "INT32",
+          "lowerBound": "0",
+          "upperBound": "100000"
+        },
+        {
+          "name": "s_bl",
+          "dataType": "INT64",
+          "lowerBound": "100000",
+          "upperBound": "10000000"
+        },
+        {
+          "name": "s_bf",
+          "dataType": "FLOAT",
+          "lowerBound": "-100.0",
+          "upperBound": "100.0"
+        }
+      ],
+      "tags": {
+        "db": "zjr",
+        "data": "fake",
+        "type": "test"
+      },
+      "amount": 1000000,
+      "seed": 0,
+      "batchSize": 5000
+    },
+    {
+      "name": "dev_c",
+      "startTimestamp": 1522028101000,
+      "fieldTemplateList": [
+        {
+          "name": "s_ci",
+          "dataType": "INT32",
+          "lowerBound": "0",
+          "upperBound": "100000"
+        },
+        {
+          "name": "s_cl",
+          "dataType": "INT64",
+          "lowerBound": "100000",
+          "upperBound": "10000000"
+        },
+        {
+          "name": "s_cf",
+          "dataType": "FLOAT",
+          "lowerBound": "-100.0",
+          "upperBound": "100.0"
+        }
+      ],
+      "tags": {
+        "db": "zjr",
+        "data": "fake",
+        "type": "test"
+      },
+      "amount": 10000000,
+      "seed": 0,
+      "batchSize": 5000
+    },
+    {
+      "name": "dev_d",
+      "startTimestamp": 1522028101000,
+      "fieldTemplateList": [
+        {
+          "name": "s_di",
+          "dataType": "INT32",
+          "lowerBound": "0",
+          "upperBound": "100000"
+        },
+        {
+          "name": "s_dl",
+          "dataType": "INT64",
+          "lowerBound": "100000",
+          "upperBound": "10000000"
+        },
+        {
+          "name": "s_df",
+          "dataType": "FLOAT",
+          "lowerBound": "-100.0",
+          "upperBound": "100.0"
+        }
+      ],
+      "tags": {
+        "db": "zjr",
+        "data": "fake",
+        "type": "test"
+      },
+      "amount": 100000000,
+      "seed": 0,
+      "batchSize": 5000
+    }
+  ],
+  "databaseConfig": {
+    "OPENTSDB" :{
+      "url": "192.168.3.91:4242",
+      "username": "root",
+      "passwd": "admin",
+      "database":"zjr"
+    },
+    "IOTDB" :{
+      "url": "jdbc:tsfile://192.168.3.93:6667/",
+      "username": "root",
+      "passwd": "root",
+      "database":"zjr"
+    },
+    "INFLUXDB" :{
+      "url": "http://192.168.3.91:8086",
+      "username": "root",
+      "passwd": "admin",
+      "database":"zjr"
+    }
+  }
+}
