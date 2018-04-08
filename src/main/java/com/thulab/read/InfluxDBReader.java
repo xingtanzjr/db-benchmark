@@ -18,7 +18,7 @@ public class InfluxDBReader extends DBReader {
     private String database;
 
     private InfluxDBReader(String url, String username, String passwd, String database) {
-        influxDB = MyInfluxDBFactory.connect(url, "root", "root", 200, TimeUnit.SECONDS);
+        influxDB = MyInfluxDBFactory.connect(url, "root", "root", 3600, TimeUnit.SECONDS);
         this.database = database;
     }
 
