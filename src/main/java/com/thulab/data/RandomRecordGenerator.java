@@ -47,7 +47,7 @@ public class RandomRecordGenerator implements RecordGenerator {
         for (FieldTemplate template : fieldList) {
             record.addDataPoint(genDataPointByTemplate(template));
         }
-        startTimestamp++;
+        startTimestamp += 1000;
         currentCount++;
         return record;
     }
