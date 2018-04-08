@@ -22,11 +22,12 @@ public class OpenTSDBReader extends DBReader {
 
     private OpenTSDBReader(DatabaseConfig dbconfig) {
         url = "http://" + dbconfig.getUrl() + "/api/query?";
-        client = HttpClients.createDefault();
+
     }
 
     @Override
     protected void executeQuery(String sql) throws SQLException {
+        client = HttpClients.createDefault();
         HttpGet get = new HttpGet(String.format("%s%s", url, sql));
         try {
             HttpResponse response = client.execute(get);
