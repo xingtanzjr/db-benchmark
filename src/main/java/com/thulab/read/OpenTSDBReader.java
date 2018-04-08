@@ -31,7 +31,7 @@ public class OpenTSDBReader extends DBReader {
         try {
             HttpResponse response = client.execute(get);
             HttpEntity entity = response.getEntity();
-            String result = EntityUtils.toString(entity, "UTF-8");
+//            String result = EntityUtils.toString(entity, "UTF-8");
 //            System.out.println(result);
         } catch (ClientProtocolException e) {
             e.printStackTrace();

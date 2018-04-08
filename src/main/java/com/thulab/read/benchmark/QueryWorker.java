@@ -38,14 +38,19 @@ public class QueryWorker {
         output = new BufferedWriter(new FileWriter(outputFilePath));
     }
 
-    public void execute() throws IOException, SQLException {
+    public void execute() throws IOException {
         while (cmdReader.hasNext()) {
             QueryCmd cmd = cmdReader.getNext();
-            System.out.println("start execute -> " + cmd);
-            cmd.setAvgTimeUsed(calAvgUsedTime(cmd));
-            output.write(formatOutput(cmd));
-            output.newLine();
-            output.flush();
+            try {
+                System.out.println("start execute -> " + cmd);
+                cmd.setAvgTimeUsed(calAvgUsedTime(cmd));
+                output.write(formatOutput(cmd));
+                output.newLine();
+                output.flush();
+            } catch (SQLException e) {
+                output.write("Error: " + cmd);
+                e.printStackTrace();
+            }
         }
         output.close();
         cmdReader.close();

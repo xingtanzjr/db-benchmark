@@ -15,6 +15,6 @@ public class OpenTSDBReaderTest {
         DatabaseConfig dbconfig = new DatabaseConfig();
         dbconfig.setUrl("192.168.3.91:4242");
         DBReader dbReader = OpenTSDBReader.getConn(dbconfig);
-        System.out.println(dbReader.query("start=1522028100000&m=sum:100s-count:dev_a.s_ai"));
+        System.out.println(dbReader.query("start=1522028101&end=1623028101&m=sum:dev_c.s_cf"));
     }
 }
