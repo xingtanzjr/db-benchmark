@@ -47,7 +47,7 @@ public class QueryWorker {
                 output.write(formatOutput(cmd));
                 output.newLine();
                 output.flush();
-            } catch (SQLException e) {
+            } catch (Exception e) {
                 output.write("Error: " + cmd);
                 e.printStackTrace();
             }
