@@ -7,6 +7,7 @@ import com.thulab.data.template.DatabaseType;
 import com.thulab.read.DBReader;
 import com.thulab.read.InfluxDBReader;
 import com.thulab.read.IoTDBReader;
+import com.thulab.read.OpenTSDBReader;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -77,6 +78,9 @@ public class QueryWorker {
                 break;
             case INFLUXDB:
                 dbReaderMap.put(type, InfluxDBReader.getConn(dbconfig));
+                break;
+            case OPENTSDB:
+                dbReaderMap.put(type, OpenTSDBReader.getConn(dbconfig));
                 break;
         }
     }
