@@ -4,7 +4,6 @@ import com.thulab.read.benchmark.QueryCmdReader;
 import com.thulab.read.benchmark.QueryCmdReaderFileImpl;
 import org.junit.Test;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 /**

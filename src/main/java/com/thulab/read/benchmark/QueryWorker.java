@@ -42,12 +42,21 @@ public class QueryWorker {
             QueryCmd cmd = cmdReader.getNext();
             System.out.println("start execute -> " + cmd);
             cmd.setAvgTimeUsed(calAvgUsedTime(cmd));
-            output.write(cmd.toString());
+            output.write(formatOutput(cmd));
             output.newLine();
             output.flush();
         }
         output.close();
         cmdReader.close();
+    }
+
+    private String formatOutput(QueryCmd cmd) {
+        StringBuilder sb = new StringBuilder();
+        sb.append(cmd.getType()).append(",")
+                .append(cmd.getSql().replace(',', ' ')).append(",")
+                .append(cmd.getRepeatTime()).append(",")
+                .append(cmd.getAvgTimeUsed());
+        return sb.toString();
     }
 
     private long calAvgUsedTime(QueryCmd cmd) throws SQLException {

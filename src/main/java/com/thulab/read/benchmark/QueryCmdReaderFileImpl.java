@@ -26,7 +26,7 @@ public class QueryCmdReaderFileImpl implements QueryCmdReader {
             cmd = bufferedReader.readLine();
             hasCachedCmd = cmd != null;
         }
-        if (cmd != null && cmd.trim().startsWith("#")) {
+        if (cmd != null && (cmd.trim().equals("") || cmd.trim().startsWith("#"))) {
             hasCachedCmd = false;
             return hasNext();
         }
